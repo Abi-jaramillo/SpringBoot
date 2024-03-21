@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.generation.aphrodite.model.Producto;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service // Ésta detecta automáticamente durante la exploración de componentes y la gestiona como un bean de servicio.
 public class ProductoService {
     public final ArrayList<Producto> list = new ArrayList<Producto>( ); 
     public ProductoService ( ) {

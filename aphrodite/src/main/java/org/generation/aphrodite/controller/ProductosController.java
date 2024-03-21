@@ -15,18 +15,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping (path = "/api/productos/")
+@RestController // Se utiliza para crear controladores y devuelven directamente datos en lugar de vistas.
+@RequestMapping (path = "/api/productos/") // Se utiliza para asignar solicitudes HTTP a métodos de controlador específicos o a controladores completos. Especifica la URL a la que responderá el método 
 public class ProductosController {
     private final ProductoService productoService;
     
-   @Autowired
+   @Autowired // Ésta inyecta dependencias automáticamente en un componente Spring.
    public ProductosController (ProductoService productoService) {
 	    this.productoService = productoService;
 	}//Constructor
     
     // GET
-    @GetMapping
+    @GetMapping // Ésta mapea las solicitudes HTTP GET a métodos específicos del controlador.
     public ArrayList <Producto> getProductos ( ) {
 		return productoService.getAllProductos( );
     }
@@ -38,15 +38,16 @@ public class ProductosController {
   	}
   	
   	//POST
-  	@PostMapping
+  	@PostMapping // Ésta mapea las solicitudes HTTP POST a métodos específicos del controlador. 
   	public Producto addProducto (@RequestBody Producto producto) {
 	    return productoService.addProducto(producto);
   	}
 	    
 	   //PUT
-	   @PutMapping(path = "{prodId}")  // --> http://localhost:8080/api/products/1?price=70.20 //MODIFICA SOLO UN PARÁMETRO
+	   @PutMapping(path = "{prodId}")  // --> http://localhost:8080/api/products/1?price=70.20 //MODIFICA SOLO UN PARÁMETRO  
+	   //Ésta mapea las solicitudes HTTP PUT a métodos específicos del controlador.
 		public Producto updateProduct(@PathVariable("prodId") int prodId,
-			@RequestParam (required = false) String nombre,
+			@RequestParam (required = false) String nombre, // se utiliza para vincular los parámetros de una solicitud HTTP a los parámetros de un método de controlador. Cuando se recibe una solicitud HTTP con parámetros de consulta o formularios
 			@RequestParam (required = false) String categoria,
 			@RequestParam (required = false) String descripcion,
 			@RequestParam (required = false) Double precio,
@@ -55,7 +56,7 @@ public class ProductosController {
 		}
 	   
 	 //DELETE
-		@DeleteMapping(path = "{prodId}")
+		@DeleteMapping(path = "{prodId}") // Ésta mapea las solicitudes HTTP DELETE a métodos específicos del controlador.
 		public Producto deleteProducto (@PathVariable("prodId") int prodId ) {
 		    return productoService.deleteProducto(prodId);
 		}
