@@ -18,7 +18,7 @@ public class Producto {
 	URL_imagen = uRL_imagen;
 	Producto.total++;
 	id = Producto.total;
-    }
+    }//constructor
 
     public Producto( ) {
 	Producto.total++;
@@ -89,4 +89,4 @@ public class Producto {
 	return "Producto [nombre=" + nombre + ", categoria=" + categoria + ", descripcion=" + descripcion + ", precio="
 		+ precio + ", URL_imagen=" + URL_imagen + ", id=" + id + "]";
     }
-}
+}//class Product

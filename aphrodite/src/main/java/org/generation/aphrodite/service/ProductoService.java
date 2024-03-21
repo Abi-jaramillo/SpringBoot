@@ -27,7 +27,7 @@ public class ProductoService {
 		if (producto.getId( ) == prodId) {
 		    tmpProd = producto;
 		    break;
-		}
+		 }
 	    }
 	    return tmpProd;
     }
