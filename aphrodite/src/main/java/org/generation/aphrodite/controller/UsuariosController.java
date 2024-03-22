@@ -1,7 +1,8 @@
 package org.generation.aphrodite.controller;
 
-import java.util.ArrayList;
+import java.util.List;
 
+import org.generation.aphrodite.dto.ChangePassword;
 import org.generation.aphrodite.model.Usuario;
 import org.generation.aphrodite.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +30,12 @@ import org.springframework.web.bind.annotation.RestController;
 		}//Constructor
 	  
 	    @GetMapping // Ésta mapea las solicitudes HTTP GET a métodos específicos del controlador.
-	    public ArrayList <Usuario> getUsuarios ( ) {
+	    public List <Usuario> getUsuarios ( ) {
 			return usuarioService.getAllUsuarios( );
 	    }//primer GET
 	    
 	  	@GetMapping (path = "{usuaId}") 
-	  	public Usuario getUsuario ( @PathVariable("usuaId") int usuaId ) {  // Permite capturar valres dinámicos de la URL y utilizarlos dentro del controlador.
+	  	public Usuario getUsuario ( @PathVariable("usuaId") Long usuaId ) {  // Permite capturar valres dinámicos de la URL y utilizarlos dentro del controlador.
 	  	    	return usuarioService.getUsuario ( usuaId );
 	  	}//segundo GET
 	  	
@@ -44,15 +45,13 @@ import org.springframework.web.bind.annotation.RestController;
 	  	}//POST
 	  	
 	  	@PutMapping(path = "{usuaId}") // Ésta mapea las solicitudes HTTP PUT a métodos específicos del controlador.
-	  	public Usuario updateUsuario(@PathVariable("usuaId") int usuaId,
-				@RequestParam (required = false) String nombre, // Se utiliza para vincular los parámetros de una solicitud ya sea en URL o en cuerpo de la solicitud. 
-				@RequestParam (required = false) String correo,
-				@RequestParam (required = false) String telefono) {
-			    	return usuarioService.updateUsuario( usuaId, nombre, correo, telefono);
+	  	public Usuario updateUsuario(@PathVariable("usuaId") Long usuaId,
+				@RequestBody ChangePassword changePassword) {
+			    	return usuarioService.updateUsuario( usuaId, changePassword);
 			}//PUT
 	  	
 	  	@DeleteMapping(path = "{usuaId}") // Ésta mapea las solicitudes HTTP DELETE a métodos específicos del controlador.
-		public Usuario deleteUsuario (@PathVariable("usuaId") int usuaId ) {
+		public Usuario deleteUsuario (@PathVariable("usuaId") Long usuaId ) {
 		    return usuarioService.deleteUsuario(usuaId);
 		}//DELETE
 	

@@ -1,69 +1,71 @@
 package org.generation.aphrodite.service;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
+import org.generation.aphrodite.dto.ChangePassword;
 import org.generation.aphrodite.model.Usuario;
+import org.generation.aphrodite.repository.UsuariosRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service // Ésta detecta automáticamente durante la exploración de componentes y la gestiona como un bean de servicio.
 public class UsuarioService {
-	public final ArrayList<Usuario> list = new ArrayList<Usuario>( ); 
-    public UsuarioService () {
-    	list.add(new Usuario("Juan Torres", "juantorres@gmail.com", "5526354789"));
-    	list.add(new Usuario("Maria Juanita", "ma.jua@gmail.com", "5567895314"));
-    	list.add(new Usuario("Lupita Mendoza", "lupis@gmail.com", "5585631784"));
-    	list.add(new Usuario("Rodrigo Duran", "rodrigod@gmail.com", "5578465329"));
-    	list.add(new Usuario("Angelica Hernandez", "angie@gmail.com", "5598764532"));
+	
+	public final UsuariosRepository usuariosRepository;
+	@Autowired
+	
+	 
+    public UsuarioService (UsuariosRepository usuariosRepository) {
+    	this.usuariosRepository=usuariosRepository;
 	}
-	public ArrayList<Usuario> getAllUsuarios() {
+	public List<Usuario> getAllUsuarios() {
 		
-		return list;
+		return usuariosRepository.findAll();
 	}//constructor
 	
-	public Usuario getUsuario(int usuaId) {
-		Usuario tmpUsua = null;
-	    for (Usuario usuario : list) {
-		if (usuario.getId() == usuaId) {
-		    tmpUsua = usuario;
-		    break;
-		 }//if
-	    }//foreach
-	    return tmpUsua;
+	public Usuario getUsuario(Long usuaId) {
+		return usuariosRepository.findById(usuaId).orElseThrow(
+				()-> new IllegalArgumentException("El Usuario con el id ["+
+						usuaId + "] no existe")
+				);
+				
 	}//getUsuario
 	
 	public Usuario addUsuario(Usuario usuario) {
-		Usuario tmpUsua = null;
-		   if( list.add(usuario)) {
-		       tmpUsua = usuario;
-		   }//if
-		    return tmpUsua;
+		Optional<Usuario> tmpUsuario=usuariosRepository.findByCorreo(usuario.getCorreo());
+		if(tmpUsuario.isEmpty()) {
+			return usuariosRepository.save(usuario);
+		} else {
+			System.out.println("Ya existe el usuario con este correo ["+
+					usuario.getCorreo()+ "]");
+			return null;
+		}
 	}//addUsuario
 	
-	public Usuario updateUsuario(int usuaId, String nombre, String correo, String telefono) {
-		Usuario tmpUsua = null;
-	    for (Usuario usuario : list) {
-		if (usuario.getId ( ) == usuaId) {
-		    tmpUsua = usuario;
-		    if (nombre != null) usuario.setNombre(nombre);
-		    if (correo != null) usuario.setCorreo(correo);
-		    if (telefono != null) usuario.setTelefono(telefono);
-		    tmpUsua = usuario;
-		    break;
-		}//if
-	 }//foreach
-	    return tmpUsua;
+	public Usuario updateUsuario(Long usuaId, ChangePassword changePassword) {
+		Usuario tmpUsuario = null;
+		if (usuariosRepository.existsById(usuaId)){
+	    	tmpUsuario = usuariosRepository.findById(usuaId).get();
+	    	if(tmpUsuario.getPassword().equals(changePassword.getPassword())) {
+	    		tmpUsuario.setPassword(changePassword.getNpassword());
+	    		usuariosRepository.save(tmpUsuario);
+	    	}else {
+	    		System.out.println("updateUser- El password del usuario ["+
+	    				tmpUsuario.getId()+ "] no coincide");
+	    		tmpUsuario=null;
+	    	}//if equals
+	 }//if existById
+	    return tmpUsuario;
 	}//updateUsuario
 	
-	public Usuario deleteUsuario(int usuaId) {
-		Usuario tmpUsua = null;
-	    for (Usuario usuario : list) {
-		if (usuario.getId() == usuaId) {
-		    tmpUsua = usuario;
-		    list.remove(usuario);
-		    break;
-	}//if
-	   }//foreach
-	    return tmpUsua;  
+	public Usuario deleteUsuario(Long usuaId) {
+		Usuario tmpUsuario = null;
+	    if (usuariosRepository.existsById(usuaId)){
+	    	tmpUsuario = usuariosRepository.findById(usuaId).get();
+	    	usuariosRepository.deleteById(usuaId);
+	}//for
+	    return tmpUsuario;  
 	}//deleteUsuario
 	
 	

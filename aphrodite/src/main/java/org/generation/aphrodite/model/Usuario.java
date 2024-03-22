@@ -1,25 +1,37 @@
 package org.generation.aphrodite.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Usuarios")
 public class Usuario {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column (name="id", unique=true, nullable=false)
+	private Long id;
+	@Column (nullable=false)
 	private String nombre;
+	@Column (unique=true, nullable=false)
 	private String correo;
+	@Column (nullable=false)
 	private String telefono;
-	private int id;
-    private static int total = 0;
+	@Column (nullable=false)
+	private String password;
     
-    
-	public Usuario(String nombre, String correo, String telefono) {
+	public Usuario(String nombre, String correo, String telefono, String password) {
 		super();
 		this.nombre = nombre;
 		this.correo = correo;
 		this.telefono = telefono;
-		Usuario.total++;
-		id = Usuario.total;
+		this.password = password;
 		}//constructor	
     
 	public Usuario( ) {
-		Usuario.total++;
-		id = Usuario.total;
 	    }//constructor vacío
 
 	public String getNombre() {
@@ -46,17 +58,22 @@ public class Usuario {
 		this.telefono = telefono;
 	}//setTelefono
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}//getId
 
-	public void setId(int id) {
-		this.id = id;
-	}//setId
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	@Override
 	public String toString() {
-		return "Usuario [nombre=" + nombre + ", correo=" + correo + ", telefono=" + telefono + ", id=" + id + "]";
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", correo=" + correo + ", telefono=" + telefono
+				+ ", password=" + password + "]";
 	}//toString
 	
 }//class Usuario
