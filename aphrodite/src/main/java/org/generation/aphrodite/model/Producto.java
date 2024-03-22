@@ -1,13 +1,28 @@
 package org.generation.aphrodite.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Producto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(nullable = false)
     private String nombre;
-    private String categoria; // enum?
+    @Column(nullable = false)
+    private String categoria; 
     private String descripcion;
+    @Column(nullable = false)
     private double precio;
+    @Column(nullable = false)
     private String URL_imagen;
-    private int id;
-    private static int total = 0;
+    
     
     public Producto(String nombre, String categoria, String descripcion, double precio, String uRL_imagen) {
 	super( );
@@ -16,13 +31,9 @@ public class Producto {
 	this.descripcion = descripcion;
 	this.precio = precio;
 	URL_imagen = uRL_imagen;
-	Producto.total++;
-	id = Producto.total;
     }//constructor
 
     public Producto( ) {
-	Producto.total++;
-	id = Producto.total;
     }//constructor vacío
 
     public String getNombre() {
@@ -64,13 +75,8 @@ public class Producto {
     }
 
 
-    public int getId() {
+    public Long getId() {
         return id;
-    }
-
-
-    public void setId(int id) {
-        this.id = id;
     }
 
 

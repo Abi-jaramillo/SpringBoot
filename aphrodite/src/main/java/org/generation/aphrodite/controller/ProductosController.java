@@ -1,6 +1,6 @@
 package org.generation.aphrodite.controller;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.generation.aphrodite.model.Producto;
 import org.generation.aphrodite.service.ProductoService;
@@ -27,13 +27,13 @@ public class ProductosController {
     
     // GET
     @GetMapping // Ésta mapea las solicitudes HTTP GET a métodos específicos del controlador.
-    public ArrayList <Producto> getProductos ( ) {
+    public List <Producto> getProductos ( ) {
 		return productoService.getAllProductos( );
     }
     
   //GET
   	@GetMapping (path = "{prodId}") 
-  	public Producto getProducto ( @PathVariable("prodId") int prodId ) {
+  	public Producto getProducto ( @PathVariable("prodId") Long prodId ) {
   	    	return productoService.getProducto ( prodId );
   	}
   	
@@ -46,7 +46,7 @@ public class ProductosController {
 	   //PUT
 	   @PutMapping(path = "{prodId}")  // --> http://localhost:8080/api/products/1?price=70.20 //MODIFICA SOLO UN PARÁMETRO  
 	   //Ésta mapea las solicitudes HTTP PUT a métodos específicos del controlador.
-		public Producto updateProduct(@PathVariable("prodId") int prodId,
+		public Producto updateProduct(@PathVariable("prodId") Long prodId,
 			@RequestParam (required = false) String nombre, // se utiliza para vincular los parámetros de una solicitud HTTP a los parámetros de un método de controlador. Cuando se recibe una solicitud HTTP con parámetros de consulta o formularios
 			@RequestParam (required = false) String categoria,
 			@RequestParam (required = false) String descripcion,
@@ -57,7 +57,7 @@ public class ProductosController {
 	   
 	 //DELETE
 		@DeleteMapping(path = "{prodId}") // Ésta mapea las solicitudes HTTP DELETE a métodos específicos del controlador.
-		public Producto deleteProducto (@PathVariable("prodId") int prodId ) {
+		public Producto deleteProducto (@PathVariable("prodId") Long prodId ) {
 		    return productoService.deleteProducto(prodId);
 		}
 	    
