@@ -1,6 +1,7 @@
 package org.generation.aphrodite.controller;
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 import org.generation.aphrodite.model.Pedido;
 import org.generation.aphrodite.service.PedidoService;
@@ -28,13 +29,13 @@ public class PedidoController {
 	
 	//GET Solicita todos los pedidos
 	@GetMapping
-	public ArrayList<Pedido> getPedido() {
+	public List<Pedido> getPedido() {
 		return pedidoService.getAllPedidos();
 	}//getPedido 
 	
 	//GET Solicita 1 solo pedido (el solicitado)
 	@GetMapping (path="{pedId}")
-	public Pedido getPedido(@PathVariable("pedId") int pedId) { //http://localhost:8080/api/pedidos/ utiliza el URL y le agrega la variable (pedId)
+	public Pedido getPedido(@PathVariable("pedId") Long pedId) { //http://localhost:8080/api/pedidos/ utiliza el URL y le agrega la variable (pedId)
 		return pedidoService.getPedido(pedId);
 	}
 	
@@ -52,15 +53,17 @@ public class PedidoController {
 	//}//updatePedido
 	
 	@PutMapping
-	public Pedido updatePedido(@PathVariable("pedId") int pedId,
-			@RequestParam (required=false)int cantidad_productos,
-			@RequestParam (required=false)String direccion){
-			return pedidoService.updatePedido(pedId,cantidad_productos,direccion);
+	public Pedido updatePedido(@PathVariable("pedId") Long pedId,
+			@RequestParam (required=false)Long cantidad_productos,
+			@RequestParam (required=false)String direccion,
+			@RequestParam (required=false)String productos)
+	{
+			return pedidoService.updatePedido(pedId,cantidad_productos,direccion,productos);
 	}//updatePedido
 	
 	//DELETE
 	@DeleteMapping(path="{pedId}")
-	public Pedido deletePedido(@PathVariable("pedId") int pedId) { //http://localhost:8080/api/pedidos/ utiliza el URL y le agrega la variable (pedId)
+	public Pedido deletePedido(@PathVariable("pedId") Long pedId) { //http://localhost:8080/api/pedidos/ utiliza el URL y le agrega la variable (pedId)
 		return pedidoService.deletePedido(pedId);
 	}//DELETE
 	
