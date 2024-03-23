@@ -3,6 +3,7 @@ package org.generation.aphrodite.controller;
 import java.util.List;
 
 import org.generation.aphrodite.model.Categoria;
+import org.generation.aphrodite.service.CategoriasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
