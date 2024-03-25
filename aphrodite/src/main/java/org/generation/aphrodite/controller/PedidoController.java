@@ -29,7 +29,7 @@ public class PedidoController {
 	
 	//GET Solicita todos los pedidos
 	@GetMapping
-	public List<Pedido> getPedido() {
+	public List<Pedido> getPedidos() {
 		return pedidoService.getAllPedidos();
 	}//getPedido 
 	
@@ -54,11 +54,11 @@ public class PedidoController {
 	
 	@PutMapping
 	public Pedido updatePedido(@PathVariable("pedId") Long pedId,
-			@RequestParam (required=false)Long cantidad_productos,
+			@RequestParam (required=false)Long cantidadProductos,
 			@RequestParam (required=false)String direccion,
-			@RequestParam (required=false)String productos)
+			@RequestParam (required=false)String idProductos)
 	{
-			return pedidoService.updatePedido(pedId,cantidad_productos,direccion,productos);
+			return pedidoService.updatePedido(pedId,cantidadProductos,direccion,idProductos);
 	}//updatePedido
 	
 	//DELETE

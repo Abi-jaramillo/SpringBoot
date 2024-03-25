@@ -12,43 +12,44 @@ import javax.persistence.Table;
 public class Pedido {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	@Column(name="no_pedido",unique=true,nullable=false)
-	private long no_pedido;
+	@Column(name="noPedido",unique=true,nullable=false)
+	private Long noPedido;
 	@Column(nullable=false)
-	private long cantidad_productos;
+	private Long cantidadProductos;
 	@Column(nullable=false)
 	private String direccion;
 	@Column(nullable=false)
-	private String productos;
+	private String idProductos;
 	
 	
 	
 	//1.Constructores
-	public Pedido(long cantidad_productos, String direccion, String productos) {
+	public Pedido(Long cantidadProductos, String direccion, String idProductos) {
 		super();
-		this.cantidad_productos = cantidad_productos;
+		this.cantidadProductos = cantidadProductos;
 		this.direccion = direccion;
-		this.productos = productos;
+		this.idProductos = idProductos;
 	}
 	//Constructor vacio
-	public Pedido() {}
+	public Pedido( ) {
+	}
 	
 	//Getters&Setters
 	public String getProductos() {
-		return productos;
+		return idProductos;
 	}
-	public void setProductos(String productos) {
-		this.productos = productos;
+	public void setProductos(String idProductos) {
+		this.idProductos = idProductos;
 	}
 		
-	public Long getNo_pedido() {
-		return no_pedido;
+	public Long getNoPedido() {
+		return noPedido;
 	}
-	public Long getCantidad_productos() {
-		return cantidad_productos;
+	public Long getCantidadProductos() {
+		return cantidadProductos;
 	}
-	public void setCantidad_productos(long cantidad_productos) {
-		this.cantidad_productos = cantidad_productos;
+	public void setCantidadProductos(Long cantidadProductos) {
+		this.cantidadProductos = cantidadProductos;
 	}
 	
 	public String getDireccion() {
@@ -60,8 +61,8 @@ public class Pedido {
 	
 	@Override
 	public String toString() {
-		return "Pedido [no_pedido=" + no_pedido + ", cantidad_productos=" + cantidad_productos + ", direccion="
-				+ direccion + ", productos=" + productos + "]";
+		return "Pedido [noPedido=" + noPedido + ", cantidadProductos=" + cantidadProductos + ", direccion="
+				+ direccion + ", idProductos=" + idProductos + "]";
 	}
 	
 	

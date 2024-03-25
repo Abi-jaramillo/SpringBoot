@@ -5,15 +5,15 @@ import java.util.List;
 import java.util.Optional;
 
 import org.generation.aphrodite.model.Pedido;
-import org.generation.aphrodite.repository.PedidosRepository;
+import org.generation.aphrodite.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service //Indica que es un servicio, va antes que cualquier controlador
 public class PedidoService {
-	public final PedidosRepository pedidoRepository;
+	public final PedidoRepository pedidoRepository;
 	@Autowired
-	public PedidoService(PedidosRepository pedidoRepository) {
+	public PedidoService(PedidoRepository pedidoRepository) {
 		this.pedidoRepository = pedidoRepository;
 	}//Constructor
 
@@ -28,12 +28,12 @@ public class PedidoService {
 	}//getPedido
 
 	public Pedido addPedido(Pedido pedido) {
-		Optional<Pedido> tmpPed= pedidoRepository.findByNo_pedido(pedido.getNo_pedido());
+		Optional<Pedido> tmpPed= pedidoRepository.findByNoPedido(pedido.getNoPedido());
 		if(tmpPed.isEmpty()) {
 			return pedidoRepository.save(pedido);
 		}else {
 			System.out.println("Ya existe el pedido con numero["
-					+pedido.getNo_pedido() +"]");
+					+pedido.getNoPedido() +"]");
 			return null;
 		}//if
 		
@@ -48,13 +48,13 @@ public class PedidoService {
 		return tmpPed;
 	}//deletePedido
 
-	public Pedido updatePedido(Long pedId,Long cantidad_productos, String direccion, String productos) {
+	public Pedido updatePedido(Long pedId,Long cantidadProductos, String direccion, String idProductos) {
 		Pedido pedido = null;
 		if(pedidoRepository.existsById(pedId)) {
 			pedido= pedidoRepository.findById(pedId).get();
-			if(productos.length()!=0) pedido.setProductos(productos);
+			if(idProductos.length()!=0) pedido.setProductos(idProductos);
 			if(direccion.length()!=0) pedido.setDireccion(direccion);
-			if(cantidad_productos.doubleValue()>0) pedido.setCantidad_productos(cantidad_productos);
+			if(cantidadProductos.doubleValue()>0) pedido.setCantidadProductos(cantidadProductos);
 			pedidoRepository.save(pedido);
 		}
 		return pedido;
