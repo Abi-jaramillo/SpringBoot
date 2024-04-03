@@ -68,5 +68,16 @@ public class UsuarioService {
 	    return tmpUsuario;  
 	}//deleteUsuario
 	
+	public boolean validateUsuario(Usuario usuario) {
+		Optional <Usuario> usuarioByCorreo = usuariosRepository.findByCorreo(usuario.getCorreo());
+		if(usuarioByCorreo.isPresent()) {
+			Usuario tmpUsuario = usuarioByCorreo.get();
+			if(usuario.getPassword().equals(tmpUsuario.getPassword())) {
+				return true;
+			}//if
+		}//if
+		return false;
+	}//validateUsuario
+	
 	
 }//UsuarioService
