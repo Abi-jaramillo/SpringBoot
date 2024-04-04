@@ -31,7 +31,7 @@ public class LoginController {
 	public Token loginUsuario(@RequestBody Usuario usuario) throws ServletException {
 		if(usuarioService.validateUsuario(usuario)) {
 			System.out.println("Usuario válido " + usuario.getCorreo());
-			return new Token("");
+			return new Token(generateToken(usuario.getCorreo()));
 		}//if de validateUsuario
 		throw new ServletException("Nombre de usuario o constraseña incorrectos " + usuario.getCorreo());
 	}//loginUsuario
