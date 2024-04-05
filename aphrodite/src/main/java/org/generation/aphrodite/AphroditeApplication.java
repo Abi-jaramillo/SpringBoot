@@ -22,4 +22,4 @@ public class AphroditeApplication {
 		return registrationBean;
 	}//jwtFilter
 	
-}//class aplication
+}//class application

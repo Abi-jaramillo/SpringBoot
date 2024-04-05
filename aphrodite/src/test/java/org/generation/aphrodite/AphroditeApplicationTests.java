@@ -29,7 +29,7 @@ class AphroditeApplicationTests {
 
 	@Autowired
 	private MockMvc mockMvc;
-	private final String token="Bearer: "
+	private final String token="Bearer: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdXBpc0BnbWFpbC5jb20iLCJyb2xlIjoidXN1YXJpbyIsImlhdCI6MTcxMjI4NjYzOSwiZXhwIjoxNzEyMzU4NjM5fQ.QefzVShKOk5HYOkFrqEI2uVd5FejF6SQTQ0M_8UUjtw";
 
 	@Test
 	@DisplayName("Se prueba el endpoint http://localhost:8080/api/productos/1")
@@ -37,30 +37,33 @@ class AphroditeApplicationTests {
 		this.mockMvc.perform( get("/api/productos/1") )
 				.andDo(print())
 				.andExpect(status().isOk())
-				.andExpect(content().string(containsString("")));
+				.andExpect(content().string(containsString("tinte.jpg")));
 	}//pruebaGet
 
 	@Test
 	//@Disabled("Probado la primera vez, desabilidado") //solo se puede agregar una vez
-	@DisplayName("Se prueba borrar el producto con id 2 http://localhost:8080/api/productos/2")
+	@DisplayName("Se prueba borrar el producto con id 5 http://localhost:8080/api/productos/5")
 	void pruebaDELETE() throws Exception {
-		this.mockMvc.perform( delete("/api/productos/2").header("Authorization", token) )
+		this.mockMvc.perform( delete("/api/productos/5").header("Authorization", token) )
 				.andDo(print())
 				.andExpect(status().isOk())
-				.andExpect(content().string(containsString(""))
+				.andExpect(content().string(containsString("Kit de Rutina Diaria"))
+						
 						);
 	}//pruebaDelete
 	
 	@Test
-	//@Disabled("Probado la primera vez, desabilidado")
+	@Disabled("Probado la primera vez, desabilidado")
 	@DisplayName("Se prueba crear un producto nuevo")
 	void pruebaPOST() throws Exception{
 		Producto p = new Producto();
-		p.setNombre("");
-		p.setDescripcion("");
-		p.setURL_imagen("");
-		p.setPrecio();
-		p.setCategoria("");
+		p.setNombre("Kit de Rutina Diaria");
+		p.setCategoria("piel");
+		p.setDescripcion("Kit de tres piezas para rutina diaria de skin care. El limpiador Squalane elimina el maquillaje. Hyaluronic Acid 2% + B5 favorece la hidratación de múltiples capas de la superficie de la piel");
+		p.setPrecio(450.0);
+		p.setURL_imagen("kit.jpg");
+		
+		
 		this.mockMvc.perform( post("/api/productos/")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(asJsonString(p))
@@ -84,17 +87,17 @@ class AphroditeApplicationTests {
 	void pruebaPUT() throws Exception{
 		Producto p = new Producto();
 		p.setNombre("");
-		p.setDescripcion("");
-		p.setURL_imagen("");
-		p.setPrecio();
 		p.setCategoria("");
+		p.setDescripcion("");
+		p.setPrecio(400.0);
+		p.setURL_imagen("");
 		this.mockMvc.perform( put("/api/productos/1")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(asJsonString(p))
 				.header("Authorization", token) )
 				.andDo(print())
 				.andExpect(status().isOk())
-				.andExpect(content().string(containsString(""))
+				.andExpect(content().string(containsString("400.0"))
 						);
 	}//pruebaPut
 }
