@@ -6,6 +6,7 @@ import org.generation.aphrodite.dto.ChangePassword;
 import org.generation.aphrodite.model.Usuario;
 import org.generation.aphrodite.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+@CrossOrigin(origins = {"http://localhost:5500", "http://127.0.0.1:5500", "https://abi-jaramillo.github.io/Aphrodite/"})
 	@RestController // Se utiliza para crear controladores y devuelven directamente datos en lugar de vistas.
 
 	@RequestMapping (path = "/api/usuarios/") // Se utiliza para asignar solicitudes HTTP a métodos de controlador específicos o a controladores completos. Especifica la URL a la que responderá el método o la clase anotada.

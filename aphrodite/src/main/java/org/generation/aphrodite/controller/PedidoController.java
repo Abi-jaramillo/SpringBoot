@@ -6,6 +6,7 @@ import java.util.List;
 import org.generation.aphrodite.model.Pedido;
 import org.generation.aphrodite.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins = {"http://localhost:5500", "http://127.0.0.1:5500", "https://abi-jaramillo.github.io/Aphrodite/"})
 @RestController
 @RequestMapping(path="/api/pedidos/")//Permite asignar una ruta  http://localhost:8080/api/pedidos/
 public class PedidoController {
