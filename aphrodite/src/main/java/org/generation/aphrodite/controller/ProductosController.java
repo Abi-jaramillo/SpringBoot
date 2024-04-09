@@ -48,7 +48,7 @@ public class ProductosController {
 	   //PUT
 	   @PutMapping(path = "{prodId}")  // --> http://localhost:8080/api/products/1?price=70.20 //MODIFICA SOLO UN PARÁMETRO  
 	   //Ésta mapea las solicitudes HTTP PUT a métodos específicos del controlador.
-		public Producto updateProduct(@PathVariable("prodId") Long prodId,
+		public Producto updateProducto(@PathVariable("prodId") Long prodId,
 			@RequestParam (required = false) String nombre, // se utiliza para vincular los parámetros de una solicitud HTTP a los parámetros de un método de controlador. Cuando se recibe una solicitud HTTP con parámetros de consulta o formularios
 			@RequestParam (required = false) String categoria,
 			@RequestParam (required = false) String descripcion,

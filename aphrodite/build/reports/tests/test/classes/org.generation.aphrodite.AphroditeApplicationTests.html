@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.119s</div>
+<div class="counter">0.315s</div>
 <p>duration</p>
 </div>
 </td>
@@ -763,25 +763,25 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 <tr>
 <td class="failures">Se prueba borrar el producto con id 5 http://localhost:8080/api/productos/5</td>
 <td class="failures">pruebaDELETE()</td>
-<td class="failures">0.784s</td>
+<td class="failures">0.004s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Se prueba el endpoint http://localhost:8080/api/productos/1</td>
 <td class="failures">pruebaGET()</td>
-<td class="failures">0.026s</td>
+<td class="failures">0.193s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Se prueba crear un producto nuevo</td>
 <td class="failures">pruebaPOST()</td>
-<td class="failures">0.288s</td>
+<td class="failures">0.110s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Se prueba editar un producto</td>
 <td class="failures">pruebaPUT()</td>
-<td class="failures">0.021s</td>
+<td class="failures">0.008s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -789,21 +789,21 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>22:05:56.193 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-22:05:56.300 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-22:05:56.561 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.generation.aphrodite.AphroditeApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-22:05:56.852 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.generation.aphrodite.AphroditeApplicationTests], using SpringBootContextLoader
-22:05:56.972 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.generation.aphrodite.AphroditeApplicationTests]: class path resource [org/generation/aphrodite/AphroditeApplicationTests-context.xml] does not exist
-22:05:56.973 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.generation.aphrodite.AphroditeApplicationTests]: class path resource [org/generation/aphrodite/AphroditeApplicationTestsContext.groovy] does not exist
-22:05:56.974 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.generation.aphrodite.AphroditeApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-22:05:57.048 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.generation.aphrodite.AphroditeApplicationTests]: AphroditeApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-22:05:58.226 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.generation.aphrodite.AphroditeApplicationTests]
-22:05:59.582 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\carin\OneDrive\Documentos\Generation\ch37\SpringBoot\aphrodite\build\classes\java\main\org\generation\aphrodite\AphroditeApplication.class]
-22:05:59.586 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.generation.aphrodite.AphroditeApplication for test class org.generation.aphrodite.AphroditeApplicationTests
-22:06:01.072 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.generation.aphrodite.AphroditeApplicationTests]: using defaults.
-22:06:01.075 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-22:06:01.240 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@26f3d90c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c49fab6, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@515f4131, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@74518890, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4c5204af, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3f3ddbd9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@14c053c6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6c2d4cc6, org.springframework.test.context.event.EventPublishingTestExecutionListener@30865a90, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6134ac4a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@777c9dc9, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@71b1a49c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@73e132e0, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3773862a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2472c7d8]
-22:06:01.271 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@30f4b1a6 testClass = AphroditeApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@405325cf testClass = AphroditeApplicationTests, locations = '{}', classes = '{class org.generation.aphrodite.AphroditeApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@305f7627, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5778826f, [ImportsContextCustomizer@3e1162e7 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@24bdb479, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@67389cb8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1992eaf4, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@4fbe37eb], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+<pre>01:24:24.690 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+01:24:25.059 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+01:24:25.990 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.generation.aphrodite.AphroditeApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+01:24:26.451 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.generation.aphrodite.AphroditeApplicationTests], using SpringBootContextLoader
+01:24:26.593 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.generation.aphrodite.AphroditeApplicationTests]: class path resource [org/generation/aphrodite/AphroditeApplicationTests-context.xml] does not exist
+01:24:26.599 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.generation.aphrodite.AphroditeApplicationTests]: class path resource [org/generation/aphrodite/AphroditeApplicationTestsContext.groovy] does not exist
+01:24:26.639 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.generation.aphrodite.AphroditeApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+01:24:26.649 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.generation.aphrodite.AphroditeApplicationTests]: AphroditeApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:24:28.501 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.generation.aphrodite.AphroditeApplicationTests]
+01:24:30.360 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\OscarFR\OneDrive\Desktop\ProyectoIntegrador\SpringBoot\aphrodite\build\classes\java\main\org\generation\aphrodite\AphroditeApplication.class]
+01:24:30.381 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.generation.aphrodite.AphroditeApplication for test class org.generation.aphrodite.AphroditeApplicationTests
+01:24:33.778 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.generation.aphrodite.AphroditeApplicationTests]: using defaults.
+01:24:33.790 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+01:24:34.217 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3f3ddbd9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@14c053c6, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6c2d4cc6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@30865a90, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6134ac4a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@777c9dc9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@71b1a49c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@73e132e0, org.springframework.test.context.event.EventPublishingTestExecutionListener@3773862a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2472c7d8, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@589b028e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@22175d4f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@9fecdf1, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3b809711, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3b0f7d9d]
+01:24:34.399 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@350b3a17 testClass = AphroditeApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@38600b testClass = AphroditeApplicationTests, locations = '{}', classes = '{class org.generation.aphrodite.AphroditeApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@339bf286, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1c80e49b, [ImportsContextCustomizer@669d2b1b key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@67389cb8, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@f27ea3, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@19fe4644, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@46271dd6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -813,15 +813,15 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::               (v2.7.15)
 
-2024-04-05 22:06:05.427  INFO 7516 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : Starting AphroditeApplicationTests using Java 17.0.9 on DESKTOP-CL5B97L with PID 7516 (started by carin in C:\Users\carin\OneDrive\Documentos\Generation\ch37\SpringBoot\aphrodite)
-2024-04-05 22:06:05.435  INFO 7516 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-04-05 22:06:17.273  INFO 7516 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-05 22:06:17.864  INFO 7516 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 449 ms. Found 4 JPA repository interfaces.
-2024-04-05 22:06:27.146  INFO 7516 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-05 22:06:27.847  INFO 7516 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2024-04-05 22:06:29.696  INFO 7516 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2024-04-05 22:06:32.395  INFO 7516 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-05 22:06:34.080 ERROR 7516 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2024-04-09 01:24:45.326  INFO 9340 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : Starting AphroditeApplicationTests using Java 17.0.9 on OscarSala with PID 9340 (started by OscarFR in C:\Users\OscarFR\OneDrive\Desktop\ProyectoIntegrador\SpringBoot\aphrodite)
+2024-04-09 01:24:45.335  INFO 9340 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-04-09 01:25:06.976  INFO 9340 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-09 01:25:09.412  INFO 9340 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2211 ms. Found 4 JPA repository interfaces.
+2024-04-09 01:25:31.747  INFO 9340 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-09 01:25:33.843  INFO 9340 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-04-09 01:25:42.021  INFO 9340 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-09 01:25:46.839  INFO 9340 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-09 01:25:49.220 ERROR 9340 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -970,7 +970,7 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:06:34.914  WARN 7516 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2024-04-09 01:25:49.637  WARN 9340 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -1119,9 +1119,9 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:06:35.968  INFO 7516 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2024-04-05 22:06:40.928  INFO 7516 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-05 22:06:41.969 ERROR 7516 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2024-04-09 01:25:50.960  INFO 9340 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2024-04-09 01:26:12.953  INFO 9340 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-09 01:26:14.231 ERROR 9340 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -1270,14 +1270,14 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:06:42.315  WARN 7516 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
-2024-04-05 22:06:42.318 ERROR 7516 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : El intento de conexión falló.
-2024-04-05 22:06:42.347 ERROR 7516 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2024-04-05 22:06:42.350  WARN 7516 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2024-04-05 22:06:42.779  INFO 7516 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
+2024-04-09 01:26:14.462  WARN 9340 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
+2024-04-09 01:26:14.463 ERROR 9340 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : El intento de conexión falló.
+2024-04-09 01:26:14.626 ERROR 9340 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2024-04-09 01:26:14.638  WARN 9340 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2024-04-09 01:26:14.864  INFO 9340 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2024-04-05 22:06:43.200 ERROR 7516 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
+2024-04-09 01:26:15.965 ERROR 9340 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.29.jar:5.3.29]
@@ -1439,7 +1439,7 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:06:43.490 ERROR 7516 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@26f3d90c] to prepare test instance [org.generation.aphrodite.AphroditeApplicationTests@2a16d393]
+2024-04-09 01:26:16.224 ERROR 9340 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@3f3ddbd9] to prepare test instance [org.generation.aphrodite.AphroditeApplicationTests@3ef089ce]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-5.3.29.jar:5.3.29]
@@ -1613,13 +1613,13 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::               (v2.7.15)
 
-2024-04-05 22:06:46.997  INFO 7516 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : Starting AphroditeApplicationTests using Java 17.0.9 on DESKTOP-CL5B97L with PID 7516 (started by carin in C:\Users\carin\OneDrive\Documentos\Generation\ch37\SpringBoot\aphrodite)
-2024-04-05 22:06:46.998  INFO 7516 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-04-05 22:06:51.538  INFO 7516 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-05 22:06:51.855  INFO 7516 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 236 ms. Found 4 JPA repository interfaces.
-2024-04-05 22:06:58.384  INFO 7516 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-05 22:06:58.445  INFO 7516 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-04-05 22:06:59.610 ERROR 7516 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Exception during pool initialization.
+2024-04-09 01:26:19.005  INFO 9340 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : Starting AphroditeApplicationTests using Java 17.0.9 on OscarSala with PID 9340 (started by OscarFR in C:\Users\OscarFR\OneDrive\Desktop\ProyectoIntegrador\SpringBoot\aphrodite)
+2024-04-09 01:26:19.019  INFO 9340 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-04-09 01:26:27.318  INFO 9340 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-09 01:26:27.926  INFO 9340 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 601 ms. Found 4 JPA repository interfaces.
+2024-04-09 01:26:33.812  INFO 9340 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-09 01:26:34.153  INFO 9340 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-04-09 01:26:35.267 ERROR 9340 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Exception during pool initialization.
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -1768,7 +1768,7 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:06:59.864  WARN 7516 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2024-04-09 01:26:35.727  WARN 9340 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -1917,9 +1917,9 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:00.095  INFO 7516 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2024-04-05 22:07:01.799  INFO 7516 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-04-05 22:07:02.869 ERROR 7516 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Exception during pool initialization.
+2024-04-09 01:26:35.832  INFO 9340 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2024-04-09 01:26:37.742  INFO 9340 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-04-09 01:26:39.021 ERROR 9340 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Exception during pool initialization.
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -2068,14 +2068,14 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:03.050  WARN 7516 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
-2024-04-05 22:07:03.050 ERROR 7516 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : El intento de conexión falló.
-2024-04-05 22:07:03.052 ERROR 7516 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2024-04-05 22:07:03.054  WARN 7516 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2024-04-05 22:07:03.163  INFO 7516 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
+2024-04-09 01:26:39.042  WARN 9340 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
+2024-04-09 01:26:39.042 ERROR 9340 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : El intento de conexión falló.
+2024-04-09 01:26:39.043 ERROR 9340 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2024-04-09 01:26:39.045  WARN 9340 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2024-04-09 01:26:39.132  INFO 9340 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2024-04-05 22:07:03.399 ERROR 7516 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
+2024-04-09 01:26:39.306 ERROR 9340 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.29.jar:5.3.29]
@@ -2237,7 +2237,7 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:03.794 ERROR 7516 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@26f3d90c] to prepare test instance [org.generation.aphrodite.AphroditeApplicationTests@3436d3d7]
+2024-04-09 01:26:39.464 ERROR 9340 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@3f3ddbd9] to prepare test instance [org.generation.aphrodite.AphroditeApplicationTests@f9de1fd]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-5.3.29.jar:5.3.29]
@@ -2411,13 +2411,13 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::               (v2.7.15)
 
-2024-04-05 22:07:05.354  INFO 7516 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : Starting AphroditeApplicationTests using Java 17.0.9 on DESKTOP-CL5B97L with PID 7516 (started by carin in C:\Users\carin\OneDrive\Documentos\Generation\ch37\SpringBoot\aphrodite)
-2024-04-05 22:07:05.355  INFO 7516 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-04-05 22:07:08.370  INFO 7516 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-05 22:07:08.522  INFO 7516 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 151 ms. Found 4 JPA repository interfaces.
-2024-04-05 22:07:09.914  INFO 7516 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-05 22:07:10.010  INFO 7516 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2024-04-05 22:07:11.071 ERROR 7516 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+2024-04-09 01:26:41.450  INFO 9340 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : Starting AphroditeApplicationTests using Java 17.0.9 on OscarSala with PID 9340 (started by OscarFR in C:\Users\OscarFR\OneDrive\Desktop\ProyectoIntegrador\SpringBoot\aphrodite)
+2024-04-09 01:26:41.459  INFO 9340 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-04-09 01:26:47.291  INFO 9340 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-09 01:26:47.951  INFO 9340 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 654 ms. Found 4 JPA repository interfaces.
+2024-04-09 01:26:53.193  INFO 9340 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-09 01:26:53.495  INFO 9340 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-04-09 01:26:54.730 ERROR 9340 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -2566,7 +2566,7 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:11.161  WARN 7516 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2024-04-09 01:26:54.983  WARN 9340 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -2715,9 +2715,9 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:11.166  INFO 7516 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2024-04-05 22:07:11.775  INFO 7516 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2024-04-05 22:07:12.820 ERROR 7516 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+2024-04-09 01:26:55.046  INFO 9340 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2024-04-09 01:26:56.819  INFO 9340 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-04-09 01:26:57.984 ERROR 9340 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -2866,14 +2866,14 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:12.907  WARN 7516 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
-2024-04-05 22:07:12.909 ERROR 7516 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : El intento de conexión falló.
-2024-04-05 22:07:12.910 ERROR 7516 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2024-04-05 22:07:12.963  WARN 7516 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2024-04-05 22:07:12.973  INFO 7516 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
+2024-04-09 01:26:58.045  WARN 9340 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
+2024-04-09 01:26:58.046 ERROR 9340 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : El intento de conexión falló.
+2024-04-09 01:26:58.054 ERROR 9340 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2024-04-09 01:26:58.107  WARN 9340 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2024-04-09 01:26:58.509  INFO 9340 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2024-04-05 22:07:13.107 ERROR 7516 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
+2024-04-09 01:26:58.583 ERROR 9340 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.29.jar:5.3.29]
@@ -3035,7 +3035,7 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:13.401 ERROR 7516 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@26f3d90c] to prepare test instance [org.generation.aphrodite.AphroditeApplicationTests@71e2843b]
+2024-04-09 01:26:59.222 ERROR 9340 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@3f3ddbd9] to prepare test instance [org.generation.aphrodite.AphroditeApplicationTests@531299d3]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-5.3.29.jar:5.3.29]
@@ -3209,13 +3209,13 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::               (v2.7.15)
 
-2024-04-05 22:07:14.960  INFO 7516 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : Starting AphroditeApplicationTests using Java 17.0.9 on DESKTOP-CL5B97L with PID 7516 (started by carin in C:\Users\carin\OneDrive\Documentos\Generation\ch37\SpringBoot\aphrodite)
-2024-04-05 22:07:14.961  INFO 7516 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-04-05 22:07:19.254  INFO 7516 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-05 22:07:19.468  INFO 7516 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 212 ms. Found 4 JPA repository interfaces.
-2024-04-05 22:07:20.898  INFO 7516 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-05 22:07:20.974  INFO 7516 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2024-04-05 22:07:22.042 ERROR 7516 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Exception during pool initialization.
+2024-04-09 01:27:01.448  INFO 9340 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : Starting AphroditeApplicationTests using Java 17.0.9 on OscarSala with PID 9340 (started by OscarFR in C:\Users\OscarFR\OneDrive\Desktop\ProyectoIntegrador\SpringBoot\aphrodite)
+2024-04-09 01:27:01.465  INFO 9340 --- [    Test worker] o.g.aphrodite.AphroditeApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-04-09 01:27:08.209  INFO 9340 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-09 01:27:08.946  INFO 9340 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 732 ms. Found 4 JPA repository interfaces.
+2024-04-09 01:27:14.096  INFO 9340 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-09 01:27:14.389  INFO 9340 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-04-09 01:27:15.530 ERROR 9340 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Exception during pool initialization.
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -3364,7 +3364,7 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:22.358  WARN 7516 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2024-04-09 01:27:15.787  WARN 9340 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -3513,9 +3513,9 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:23.063  INFO 7516 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2024-04-05 22:07:24.189  INFO 7516 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2024-04-05 22:07:25.222 ERROR 7516 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Exception during pool initialization.
+2024-04-09 01:27:15.911  INFO 9340 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2024-04-09 01:27:16.989  INFO 9340 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-04-09 01:27:18.237 ERROR 9340 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Exception during pool initialization.
 
 org.postgresql.util.PSQLException: El intento de conexión falló.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:331) ~[postgresql-42.3.8.jar:42.3.8]
@@ -3664,14 +3664,14 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:25.287  WARN 7516 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
-2024-04-05 22:07:25.303 ERROR 7516 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : El intento de conexión falló.
-2024-04-05 22:07:25.307 ERROR 7516 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2024-04-05 22:07:25.308  WARN 7516 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2024-04-05 22:07:25.315  INFO 7516 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
+2024-04-09 01:27:18.250  WARN 9340 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
+2024-04-09 01:27:18.251 ERROR 9340 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : El intento de conexión falló.
+2024-04-09 01:27:18.252 ERROR 9340 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2024-04-09 01:27:18.253  WARN 9340 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2024-04-09 01:27:18.269  INFO 9340 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2024-04-05 22:07:25.346 ERROR 7516 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
+2024-04-09 01:27:18.446 ERROR 9340 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.29.jar:5.3.29]
@@ -3833,7 +3833,7 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.8.jar:42.3.8]
 	... 135 common frames omitted
 
-2024-04-05 22:07:26.093 ERROR 7516 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@26f3d90c] to prepare test instance [org.generation.aphrodite.AphroditeApplicationTests@6e1d9b32]
+2024-04-09 01:27:18.927 ERROR 9340 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@3f3ddbd9] to prepare test instance [org.generation.aphrodite.AphroditeApplicationTests@42012093]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-5.3.29.jar:5.3.29]
@@ -4009,7 +4009,7 @@ Caused by: java.net.UnknownHostException: ${PROD_DB_HOST}
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at 5 abr. 2024 22:07:36</p>
+<a href="http://www.gradle.org">Gradle 8.6</a> at 9 abr. 2024 01:27:23</p>
 </div>
 </div>
 </body>
